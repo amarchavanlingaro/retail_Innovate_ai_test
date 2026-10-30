@@ -1,0 +1,6 @@
+fulfillment_id,order_id,warehouse_id,carrier_id,ship_date,delivery_date,status,sla_met
+F-2101,A1001,W100,CAR-1,2026-10-01,2026-10-03,delivered,Y
+F-2102,A1002,W101,CAR-2,2026-10-01,2026-10-05,delivered,N
+F-2103,A1003,W102,CAR-3,2026-10-02,2026-10-04,delivered,Y
+F-2104,A1004,W103,CAR-3,2026-10-02,2026-10-09,in_transit,N
+F-2105,A1010,W101,CAR-4,2026-10-06,2026-10-08,delivered,Y

@@ -1,0 +1,8 @@
+sku,product_name,category,sub_category,segment,list_price,margin_share
+SKU-1001,Trail Pro Jacket,Apparel,Outerwear,Men,119.99,1.0
+SKU-2120,Apex Running Shoe,Footwear,Athletic,Women,89.99,1.0
+SKU-3307,Summit Water Bottle,Accessories,Hydration,Unisex,24.99,1.0
+SKU-4421,Luma Smart Lamp,Home,Lighting,Home,149.99,0.8
+SKU-7012,Harbor Laptop Sleeve,Accessories,Electronics,Unisex,39.99,0.9
+SKU-8816,Evergreen Yoga Mat,Fitness,Lifestyle,Women,54.99,0.7
+SKU-9155,Summit Travel Backpack,Accessories,Travel,Unisex,64.99,0.9

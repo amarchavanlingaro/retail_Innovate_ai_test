@@ -1,0 +1,5 @@
+carrier_id,carrier_name,mode,on_time_rate,delivery_cost_index,exception_rate
+CAR-1,NorthStar Freight,ground,0.96,1.05,0.03
+CAR-2,BlueRoute Logistics,express,0.87,1.18,0.08
+CAR-3,RapidReach Transport,ground,0.91,1.09,0.05
+CAR-4,Coastal Parcel,last_mile,0.88,1.22,0.09

@@ -1,0 +1,6 @@
+supplier_id,supplier_name,category,tier,origin
+SUP-11,NorthPeak Manufacturing,Apparel,Tier 1,Domestic
+SUP-21,Velocity Footwear Co.,Footwear,Tier 1,Domestic
+SUP-54,Helio Labs,Home,Tier 2,Imported
+SUP-77,Granite Packaging,Accessories,Tier 2,Domestic
+SUP-88,Summit Logistics Group,Logistics,Tier 1,Domestic

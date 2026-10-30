@@ -1,0 +1,10 @@
+store_id,store_name,city,state,market_type,store_type
+S010,Downtown Flagship,Seattle,WA,Urban,Store
+S011,Northside Market,Seattle,WA,Urban,Store
+S012,Riverside Plaza,Portland,OR,Suburban,Store
+S013,Fremont Hub,Denver,CO,Urban,Store
+S014,Stone Creek,Austin,TX,Suburban,Store
+S015,Market Square,Dallas,TX,Urban,Store
+W100,RDC Northwest,Tacoma,WA,Distribution,Warehouse
+W101,RDC Central,Kansas City,MO,Distribution,Warehouse
+W102,RDC South,Dallas,TX,Distribution,Warehouse
