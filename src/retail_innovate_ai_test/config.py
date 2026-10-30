@@ -1,12 +1,29 @@
-from .config import RETAIL_CONFIG
-from .medallion import BronzeLayer, SilverLayer, GoldLayer, AIAuditor
-from .insights import generate_insight_summary
+from dataclasses import dataclass
+from typing import Dict
 
-__all__ = [
-    "RETAIL_CONFIG",
-    "BronzeLayer",
-    "SilverLayer",
-    "GoldLayer",
-    "AIAuditor",
-    "generate_insight_summary",
-]
+
+@dataclass(frozen=True)
+class RetailConfig:
+    catalog: str = "retail_analytics"
+    schema: str = "ops"
+    bronze_table_prefix: str = "bronze_"
+    silver_table_prefix: str = "silver_"
+    gold_table_prefix: str = "gold_"
+    operational_review_enabled: bool = True
+    tolerance: Dict[str, float] = None
+
+    def __post_init__(self):
+        if self.tolerance is None:
+            object.__setattr__(
+                self,
+                "tolerance",
+                {
+                    "inventory_fill_rate": 0.96,
+                    "otd_service_level": 0.92,
+                    "supplier_defect_rate": 0.03,
+                    "returns_rate": 0.12,
+                },
+            )
+
+
+RETAIL_CONFIG = RetailConfig()

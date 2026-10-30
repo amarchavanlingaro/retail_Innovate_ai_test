@@ -1,22 +1,19 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Executive KPI dashboard
-# MAGIC Used for retail oversight, store performance, and supply chain health monitoring.
+# MAGIC # Operational exception monitoring
+# MAGIC This notebook reviews operating metrics and highlights business exceptions for planning and execution teams.
 
 # COMMAND ----------
-from pyspark.sql import SparkSession
+from retail_innovate_ai_test.medallion import OperationalRiskReview
 
-spark = SparkSession.getActiveSession()
+context = {
+    "inventory_fill_rate": 0.937,
+    "otd_service_level": 0.899,
+    "supplier_defect_rate": 0.048,
+    "returns_rate": 0.134,
+}
 
-inventory = spark.table("gold_inventory_health")
-shipments = spark.table("gold_supplier_performance")
-returns = spark.table("gold_returns_summary")
+review = OperationalRiskReview(domain="retail_supply_chain")
+report = review.assess(context)
 
-print("Inventory health table sample:")
-inventory.show(10, truncate=False)
-
-print("Supplier performance table sample:")
-shipments.show(10, truncate=False)
-
-print("Return summary table sample:")
-returns.show(10, truncate=False)
+print(report)

@@ -1,24 +1,27 @@
 # retail_Innovate_ai_test
 
-A Databricks-based retail and supply chain intelligence platform designed for operational analytics, business observability, and AI-assisted auditing.
+Northstar Retail Group data platform for omnichannel retail and supply chain analytics.
 
-This repository models a modern medallion architecture for a retail organization operating across stores, warehouses, order orchestration, and supplier performance. It is intentionally structured to support executive reporting, risk review, and AI-driven insight generation while preserving a realistic enterprise data platform shape.
+This repository contains a Databricks-oriented data architecture for a multi-store retail enterprise operating across stores, warehouses, fulfillment networks, and supplier ecosystems. It is structured as a production-style medallion platform to support demand, inventory, transportation, and operational performance analysis.
 
 ## Business context
 
-The fictional company, Northstar Retail Group, operates a multi-channel retail network with stores, e-commerce fulfillment, replenishment planning, and supplier networks. The platform ingests operational feeds from POS, inventory, fulfillment systems, transport, and vendor events. These feeds are organized through Bronze, Silver, and Gold layers to support:
+The fictional organization supports a combination of in-store and digital commerce activity. The platform ingests operational data from point-of-sale systems, inventory feeds, supplier shipment records, returns, and fulfillment events, then organizes them into curated business data products for planning and execution teams.
 
-- demand and sales monitoring
-- inventory health and stockouts
-- carrier and fulfillment SLA tracking
-- supplier reliability analysis
-- AI audit recommendations for governance, data quality, and decision readiness
+Core use cases include:
+
+- sales and channel performance monitoring
+- inventory health and replenishment review
+- supplier delivery and quality tracking
+- carrier service-level monitoring
+- merchandise and return trend analysis
+- operational risk and exception review
 
 ## Medallion architecture
 
-- Bronze: raw source extracts and schema-inference for operational feeds
-- Silver: cleansed, standardized, and conformed data with business keys and quality checks
-- Gold: curated business entities and KPI layers for analytics and executive reporting
+- Bronze: raw source extracts and schema-inferred operational feeds
+- Silver: cleansed, standardized, and conformed data with validated business keys
+- Gold: curated, analytics-ready business tables and KPI views
 
 ## Repository structure
 
@@ -35,7 +38,13 @@ The fictional company, Northstar Retail Group, operates a multi-channel retail n
 │   │   ├── retail_orders.csv
 │   │   ├── inventory_snapshot.csv
 │   │   ├── supplier_shipments.csv
-│   │   └── returns_events.csv
+│   │   ├── returns_events.csv
+│   │   ├── store_dim.csv
+│   │   ├── product_dim.csv
+│   │   ├── supplier_dim.csv
+│   │   ├── carrier_performance.csv
+│   │   ├── pricing_events.csv
+│   │   └── fulfillment_events.csv
 │   └── gold/
 │       └── README.md
 ├── notebooks/
@@ -48,8 +57,8 @@ The fictional company, Northstar Retail Group, operates a multi-channel retail n
 │   │   └── 03_silver_to_gold.py
 │   ├── 03_reporting/
 │   │   └── 04_kpi_dashboard.py
-│   └── 04_ai_auditor/
-│       └── 05_ai_audit_recommendations.py
+│   └── 04_operations/
+│       └── 05_exception_monitoring.py
 ├── scripts/
 │   ├── generate_demo_extracts.py
 │   ├── seed_sample_data.py
@@ -68,7 +77,7 @@ The fictional company, Northstar Retail Group, operates a multi-channel retail n
 
 ## Databricks deployment
 
-This repository is organized as a Databricks Asset Bundle project and can be deployed with:
+This repository is structured as a Databricks Asset Bundle project and can be deployed with:
 
 ```bash
 databricks bundle validate
@@ -76,26 +85,26 @@ databricks bundle deploy
 databricks jobs run retail_ai_platform
 ```
 
-## AI auditor intent
+## Operational review model
 
-The project includes a lightweight AI audit and recommendation layer for reviewing business readiness and data trust. It is designed to support benchmarking, issue detection, and governance narratives for decision-makers, not to replace formal compliance review.
+The platform includes a business-facing exception review layer to support operational governance and metric validation. This layer is designed to surface supply chain disruptions, inventory imbalance, and execution exceptions that require follow-up by planning, merchandising, and logistics teams.
 
-Examples of audit-aware outputs include:
+Representative review areas include:
 
-- cold-start data quality gaps
-- late or incomplete supplier delivery signals
-- inventory service-level risk due to low stockbuffers
-- pricing or markdown exceptions during peak seasonal periods
-- anomalies in return behavior and fulfillment defects
+- low inventory coverage and replenishment risk
+- delayed or missed shipments from suppliers
+- carrier and warehouse service degradation
+- product return concentration and demand quality issues
+- pricing and promotion anomalies affecting margin integrity
 
 ## Typical use cases
 
-- retail operations KPI reporting
-- demand and inventory balancing
-- merchandise planning support
-- supply chain SLA monitoring
-- AI readiness and audit narrative generation
+- retail performance reporting
+- inventory and replenishment planning
+- supply chain SLA tracking
+- warehouse and carrier exception review
+- business operations dashboards and governance reporting
 
 ## Notes
 
-This project is intentionally modeled as a realistic enterprise data platform for evaluation and review. It includes synthetic but plausible retail and supply chain data patterns to support reporting and interpretability.
+This repository is modeled as a realistic enterprise data platform for operational decision support. It contains synthetic but plausible retail and supply chain patterns intended to reflect business workflows in a modern data environment.
