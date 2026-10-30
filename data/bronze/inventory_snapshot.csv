@@ -1,0 +1,5 @@
+order_id,order_date,store_id,channel,sku,qty,unit_price,customer_segment
+A1001,2026-10-01,S010,store,SKU-1001,2,34.99,Loyalty
+A1002,2026-10-01,S011,ecommerce,SKU-2120,1,58.00,New
+A1003,2026-10-02,S012,store,SKU-3307,4,27.50,Value
+A1004,2026-10-02,S009,ecommerce,SKU-4421,3,95.50,VIP

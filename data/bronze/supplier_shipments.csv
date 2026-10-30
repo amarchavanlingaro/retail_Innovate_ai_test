@@ -1,0 +1,5 @@
+location_id,sku,on_hand,reorder_point,days_of_supply,warehouse
+W100,SKU-1001,120,80,18,RDC-1
+W101,SKU-2120,40,55,7,RDC-2
+W102,SKU-3307,210,110,28,RDC-1
+W103,SKU-4421,18,50,4,RDC-3

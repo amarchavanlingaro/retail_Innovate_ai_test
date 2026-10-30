@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Local artifacts
+/.venv/
+venv/
+
+# Databricks local
+.dbx/
+
+# Data
+/data/
+
+# Editor
+.vscode/
+.DS_Store

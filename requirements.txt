@@ -1,0 +1,57 @@
+# Data platform architecture
+
+## Overview
+
+The retail_Innovate_ai_test repository models a retail and supply chain data environment designed for multi-channel analytics and AI-assisted review. It includes raw extract ingestion, conformed data standards, and curated KPI tables for operational decision-making.
+
+## Layering model
+
+### Bronze
+
+The Bronze layer captures raw operational extracts from the following functional domains:
+
+- point-of-sale transactions
+- inventory snapshots
+- warehouse movement logs
+- supplier shipments
+- return and fulfillment exception events
+
+These are stored as source-aligned tables without assuming full business semantics.
+
+### Silver
+
+The Silver layer normalizes these feeds with datatypes, deduplication, business keys, and quality checks. Typical improvements include:
+
+- standardized date parsing
+- null resolution for critical dimensions
+- key alignment across stores, SKUs, and suppliers
+- conformance to retail and fulfillment semantics
+
+### Gold
+
+The Gold layer supports data product consumption. It provides curated views for:
+
+- inventory health
+- supplier performance
+- service level exceptions
+- return analysis and cause clustering
+
+## AI audit angle
+
+The project includes a lightweight AI audit pattern intended to produce richer narrative insights for governance committees and executive review boards. This is not a replacement for formal risk controls but serves as an explainable layer that surfaces operational concerns and recommended remediation.
+
+Common AI-auditor outputs:
+
+- service risk from low inventory coverage
+- elevated carrier or warehouse delay risk
+- supplier quality degradation
+- returns volatility and post-purchase friction
+
+## Decision support
+
+This architecture is designed to enable the orchestration of:
+
+- downstream dashboards
+- feature engineering for forecasting
+- AI recommendation services
+- governance narratives for internal audit and business review

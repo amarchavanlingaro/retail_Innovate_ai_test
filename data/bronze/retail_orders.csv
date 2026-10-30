@@ -1,0 +1,23 @@
+from retail_innovate_ai_test.insights import generate_insight_summary
+
+
+def test_inventory_risk_is_flagged():
+    metrics = {
+        "inventory_fill_rate": 0.93,
+        "otd_service_level": 0.95,
+        "supplier_defect_rate": 0.02,
+        "returns_rate": 0.08,
+    }
+    insights = generate_insight_summary(metrics)
+    assert any("Inventory optimization" in item for item in insights)
+
+
+def test_all_good_happy_path():
+    metrics = {
+        "inventory_fill_rate": 0.98,
+        "otd_service_level": 0.95,
+        "supplier_defect_rate": 0.01,
+        "returns_rate": 0.07,
+    }
+    insights = generate_insight_summary(metrics)
+    assert len(insights) >= 1

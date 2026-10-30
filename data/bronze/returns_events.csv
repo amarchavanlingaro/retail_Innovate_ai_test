@@ -1,0 +1,5 @@
+shipment_id,supplier_id,sku,planned_date,actual_date,quantity,on_time_flag,defect_flag
+SH-901,SUP-11,SKU-1001,2026-10-01,2026-10-02,350,Y,N
+SH-902,SUP-21,SKU-2120,2026-10-02,2026-10-04,220,N,Y
+SH-903,SUP-11,SKU-3307,2026-10-03,2026-10-03,500,Y,N
+SH-904,SUP-54,SKU-4421,2026-10-03,2026-10-05,120,N,Y
